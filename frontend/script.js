@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://gestion-nounou-backend.onrender.com";
 
 async function ajouterEntree() {
     let date = document.getElementById("date").value;
