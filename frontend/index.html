@@ -8,14 +8,31 @@
 </head>
 <body>
     <h2>Enregistrer les heures et KM</h2>
-    <label>Date:</label>
-    <input type="date" id="date">
-    <label>Heures travaillées:</label>
-    <input type="number" id="heures" placeholder="Nombre d'heures">
-    <label>KM parcourus:</label>
-    <input type="number" id="km" placeholder="Kilomètres">
-    <button onclick="ajouterEntree()">Ajouter</button>
+    <div>
+        <label>Date:</label>
+        <input type="date" id="date">
+    </div>
+    <div>
+        <label>Heures travaillées:</label>
+        <input type="number" id="heures">    
+    </div>
+    <div>
+        <label>KM parcourus:</label>
+        <input type="number" id="km">
+    </div>
     
+    <button onclick="ajouterEntree()">Ajouter</button>
+
+    <h3>Filtrer par date</h3>
+    <div>
+        <label>De:</label> <input type="date" id="dateDebut">
+    </div>
+    <div>
+        <label>À:</label> <input type="date" id="dateFin">    
+    </div>
+    <button onclick="chargerDonnees()">Filtrer</button>
+
+    <h3>Historique</h3>
     <table>
         <thead>
             <tr>
@@ -26,9 +43,10 @@
         </thead>
         <tbody id="table-body"></tbody>
     </table>
-    
+    <p><strong>Total Heures:</strong> <span id="total-heures">0</span></p>
+    <p><strong>Total KM:</strong> <span id="total-km">0</span></p>
     <button onclick="resetData()">Réinitialiser</button>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
