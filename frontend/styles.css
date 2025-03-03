@@ -1,20 +1,37 @@
 body { 
-    font-family: Arial, sans-serif; 
-    max-width: 400px; 
-    margin: auto; 
-    text-align: center;
+	font-family: Arial, 
+	sans-serif; 
+	max-width: 800px; 
+	margin: auto;
+	background-color: slategray;
+	text-align: center;
 }
+
 label, input, button { 
-    display: block; 
-    margin: 10px auto;
+	width: 200px;
+	margin: 20px 20px;
+	height: 30px;
+/*	border: 1px solid red;*/
+	border-radius: 10px;
+	font-family: Shanti;
+	font-size: 1.3em;
+	text-align: center;
+	display: inline-block;
 }
+
+input:focus {
+    outline: none;
+    border: solid 5px #00FFCE;
+}
+
 table { 
-    width: 100%; 
-    margin-top: 20px; 
-    border-collapse: collapse;
+	width: 100%; 
+	border-collapse: collapse; 
+	margin-top: 10px; 
 }
+
 th, td { 
-    border: 1px solid black; 
-    padding: 5px; 
-    text-align: center;
+	border: 1px solid black; 
+	padding: 5px; 
+	text-align: center; 
 }
