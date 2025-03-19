@@ -71,6 +71,14 @@ async function modifierEntree(id) {
     }
 }
 
+async function supprimerEntree(id) {
+    if (confirm("Voulez-vous vraiment supprimer cette entrée ?")) {
+        await fetch(`${API_URL}/supprimer/${id}`, { method: 'DELETE' });
+        chargerDonnees();
+    }
+}
+
+
 async function resetData() {
     await fetch(`${API_URL}/reset`, { method: 'DELETE' });
     chargerDonnees();
