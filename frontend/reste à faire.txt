@@ -1,0 +1,6 @@
+- verifier qu'il y a bien une verif en mode modification
+- page de login avec mot de passe
+- bouton de réinitialisation des filtres à coté des dates de filtrage
+- vérifier le site sur tel portable
+- tester le déploiement
+- initialiser l'heure de fin sur la date et l'heure courante

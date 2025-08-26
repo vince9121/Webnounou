@@ -5,201 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Nounou</title>
     <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-    <h1>Web Nounou !</h1>
-    <div class="container">
-        <h2>Saisie des heures et des KM</h2>
-        <div class="container0">
-            <div class="container1">
-                <label>Date:</label>
-                <label>Heures de début:</label>
-                <label>Heures de fin:</label>
-                <label>KM parcourus:</label>
-            </div>
-            <div class="container2">
-                <input type="date" id="date">
-                <input type="time" id="heure_debut">
-                <input type="time" id="heure_fin">
-                <input type="number" inputmode="numeric" pattern="[0-9]*" id="km">
-            </div>
+    <h1>Web Nounou</h1>
+
+    <!-- Page Navigation -->
+    <div id="navigation" class="page active">
+        <div id="menu">
+            <button onclick="showPage('saisie')">✍️ Saisie des heures</button>
+            <button onclick="showPage('liste')">📋 Liste des interventions</button>
         </div>
-            
-        <button onclick="ajouterEntree()">Ajouter</button>
-        
     </div>
 
-    <table border="1">
-        <caption>Liste des interventions</caption>
+    <div id="saisie" class="page">
+        <div class="container">
+            <button onclick="showPage('navigation')" class="btn-action btn-back"></button>
+            <h2>Saisie des heures et des KM</h2>
+            <label>Date:</label>
+            <input type="date" id="date">
+            <label>Heures de début:</label>
+            <input type="time" id="heure_debut">
+            <label>Heures de fin:</label>
+            <input type="time" id="heure_fin">
+            <label>KM parcourus:</label>
+            <input type="number" inputmode="numeric" pattern="[0-9]*" id="km">
+            <div id="saisie-message" style="color: red; margin-top: 10px;"></div>
+            <button onclick="ajouterEntree()">Ajouter</button>
+        </div> 
+    </div>
 
-        <thead>
-            <tr>
-                <th>Modifier</th>
-                <th>
-                    Date
-                    <div>
-                        <input type="text" placeholder="Début" onfocus="(this.type='date')" onblur="(this.type='text')" id="dateDebut">
-                        <input type="text" placeholder="Fin" onfocus="(this.type='date')" onblur="(this.type='text')" id="dateFin">
-                    </div>
-                    
-                </th>
-                <th>Heure début</th>
-                <th>Heure fin</th>
-                <th>Durée</th>
-                <th>Kilométrage</th>
-            </tr>
-        </thead>
+    <div id="liste" class="page">
+        <div class="table-container">
+            <button onclick="showPage('navigation')" class="btn-action btn-back"></button>
+            <table border="1">
+                <caption>Liste des interventions</caption>
 
-        <tfoot>
-            <tr>
-                <th>Totaux</th>
-                <th>-</th>
-                <th>-</th>
-                <th>-</td>
-                <th>03:00</td>
-                <th>52</td>
-            </tr>
-        </tfoot>
+                <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>
+                            Date
+                            <div>
+                                <input type="text" placeholder="Début" onfocus="(this.type='date')" onblur="(this.type='text')" id="dateDebut">
+                                <input type="text" placeholder="Fin" onfocus="(this.type='date')" onblur="(this.type='text')" id="dateFin">
+                            </div>
+                            
+                        </th>
+                        <th>Heure début</th>
+                        <th>Heure fin</th>
+                        <th>Durée</th>
+                        <th>Kilométrage</th>
+                    </tr>
+                </thead>
 
-        <tbody id="table-body">
-            <!-- <tr>
-                <td>
-                    <button onclick=""><img src="ico/modifier.png" alt="Modifier"></button>
-                    <button onclick=""><img src="ico/supprimer.png" alt="Supprimer"></button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>01/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick="">Modif.</button>
-                    <button onclick="">Suppr.</button>
-                </td>
-                <td>02/02/25</td>
-                <td>16:30</td>
-                <td>19:30</td>
-                <td>03:00</td>
-                <td>15</td>
-            </tr> -->
-        </tbody>
-        
-</table>
+                <tfoot></tfoot>
 
+                <tbody id="table-body"></tbody>
+                
+            </table>
+        </div>
+    </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 <script src="script.js"></script>
 
 </body>
 </html>
-

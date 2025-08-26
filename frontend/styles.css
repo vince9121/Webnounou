@@ -1,6 +1,35 @@
 body {
 	margin: 0px;
 	background-color: #316879;
+	font-family: Arial, sans-serif;
+}
+
+.page { display: none; }
+    
+.active { display: block; }
+
+#menu {
+	border: 5px solid #224854;
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	margin: 10px auto;
+	margin-bottom: 20px;
+ 	align-items: center;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #316879;
+	justify-content: center; /* <-- Ajoute cette ligne */
+}
+
+#menu button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;           /* <-- Ajoute cette ligne */
+      box-sizing: border-box; /* <-- Ajoute cette ligne pour inclure le padding */
 }
 
 h1 {
@@ -31,23 +60,33 @@ h3 {
 	max-width: 500px;
 	margin: 10px auto;
 	margin-bottom: 20px;
-/*	align-items: center;
-*/	padding: 10px;
+	padding: 10px;
 	border-radius: 20px;
-	background-color: #316879;;
+	background-color: #316879;
 }
 
-.container0 {
-/*	border: 3px solid yellow;
-*/	display: flex;
+.container button {
+	margin: 5px;
+	padding: 10px 20px;
+	font-size: 1em;
+	border-radius: 8px;
+	cursor: pointer;
 }
 
-.container1, .container2 {
-	flex:1;
-	/*border: 1px solid red;*/
-	display: flex;
-	flex-direction: column;
+.container label {
+	margin-bottom: 10px;
+	font-family: 'Courier';
+	color: white;
+	margin: 5px;
 }
+
+.container input {
+	margin-bottom: 10px;
+	padding: 5px;
+	font-size: 1em;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}	
 
 /* Styles des boutons d'action */
 .btn-action {
@@ -58,25 +97,27 @@ h3 {
     background-position: center;
     cursor: pointer;
     margin: 0 5px;
+	padding: 5px;
 }
 
 /* Bouton Modifier */
 .btn-modifier {
-    background-image: url('ico/modifier.png'); /* Remplace par ton image */
+    background-image: url('ico/modifier.png');
 }
 
 /* Bouton Supprimer */
 .btn-supprimer {
-    background-image: url('ico/supprimer.png'); /* Remplace par ton image */
+    background-image: url('ico/supprimer.png'); 
 }
 
-
-/* button {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border-radius: 10px;
-	height: 25px;
-} */
+.btn-back {
+    width: 48px; 
+    height: 48px;
+    background-image: url('ico/home.png');
+    background-color: lightgray;
+    border-radius: 10px;
+	border: 5px solid #224854;
+}
 
 td button {
 	margin-top: 0px;
@@ -87,11 +128,6 @@ td button {
 	background-color: transparent;
 	/*font-size: 0.5em;*/
 }
-
-/* td button img {
-	width: 15px;
-	height: 15px;
-} */
 
 label{
 	padding: 3px;
@@ -111,15 +147,23 @@ caption {
 	color: white;
 }
 
+.table-container {
+	border: 5px solid #224854;
+	display: flex;
+	flex-direction: column;
+	/* max-width: 500px; */
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 20px;
+	background-color: #316879;
+}
+
 table {
     margin:auto;
     width: 90vw;
     border-collapse: collapse; /* Supprime les espaces entre les bordures */
     table-layout: fixed;
-}
-
-tbody {
-
 }
 
 th, td {
@@ -148,5 +192,5 @@ tr:hover{
 }
 
 th input[type="text"], th input[type="date"] {
-    width: 50px; /* Largeur fixe */
+    width: 70px; /* Largeur fixe */
 }
